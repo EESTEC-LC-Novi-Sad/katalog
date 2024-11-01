@@ -1,4 +1,7 @@
+let mydata;
+
 document.addEventListener('DOMContentLoaded', function() {
+    mydata = document.getElementById("mydata");
     const katalogDiv = document.getElementById("katalog");
     const pageFlip = new St.PageFlip(katalogDiv, {
         width: 450, // base page width
@@ -16,28 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileScrollSupport: false
     });
 
-    const pages = document.querySelectorAll(".page");
-    //const orientationElement = document.querySelector(".page-orientation");
-    pageFlip.on('init', (e) => {
-        document.querySelector(".page-orientation").innerText = 'portrait';
-    });
-    pageFlip.loadFromHTML(pages);
-
-    //document.querySelector(".page-orientation").innerText = pageFlip.getOrientation();
-
-    /*window.addEventListener('resize', (e) => {
-        const orientation = pageFlip.getOrientation();
-        console.log("Window resized, current orientation:", orientation);
-        if (orientationElement) {
-            orientationElement.innerText = orientation;
-        }
-    });*/
-
-    pageFlip.on("changeOrientation", (e) => {
-        console.log("changed");
-        document.querySelector(".page-orientation").innerText = e.data
-    });
-
-
+    pageFlip.loadFromImages(getAllImages("images/brosura"));
 });
 
+function getAllImages(path) {
+    const ret = [];
+    const pageNum = Number(mydata.dataset.stranice);
+    for (let i = 1; i <= pageNum; ++i) {
+        ret.push(`${path}/${i}.jpg`)
+    }
+
+    return ret;
+}
