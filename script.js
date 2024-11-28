@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageFlip = new St.PageFlip(katalogDiv, {
         width: 521, // base page width
         height: 1128, // base page height
-	
+
         size: "stretch",
         // set threshold values:
         minWidth: 315,
@@ -14,11 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
         minHeight: 420,
         maxHeight: 4000,
 
-        autoSize: true,
 	maxShadowOpacity: 0.5, // Half shadow intensity
         showCover: true,
-        mobileScrollSupport: false,
-	swipeDistance: 10,
+        mobileScrollSupport: true,
+	swipeDistance: 30,
 	flippingTime: 750
     });
 
