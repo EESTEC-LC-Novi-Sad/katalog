@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageFlip = new St.PageFlip(katalogDiv, {
         width: 450, // base page width
         height: 800, // base page height
-
+	
         size: "stretch",
         // set threshold values:
         minWidth: 315,
@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         maxShadowOpacity: 0.5, // Half shadow intensity
         showCover: true,
-        mobileScrollSupport: false
+        mobileScrollSupport: false,
+	swipeDistance: 10
     });
 
-    pageFlip.loadFromImages(getAllImages("images/brosura"));
+    pageFlip.loadFromImages(getAllImages("images/katalog"));
+	
 });
 
 function getAllImages(path) {

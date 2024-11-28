@@ -8,12 +8,6 @@
 		<script src="./lib/page-flip.browser.js"></script>
 		<script src="./script.js"></script>
 		<style>
-.page-image {
-	height: 100%;
-	background-size: contain;
-	background-position: center center;
-	background-repeat: no-repeat;
-}
 
 .button-container {
 	height: 100px;
@@ -29,12 +23,22 @@
 	transform: translate(-50%, -50%);
 }
 
-.button {
+.myButton {
 	height: 75px;
 	width: 150px;
-	background-color: red;
+	background-color: #E52A30;
+	color: white;
 	font-size: 16px;
-	border: none;
+	border: 2px solid #E52A30;
+	font-weight: bold;
+	border-radius: 15px;
+} 
+
+.myButton:active {
+	border: 2px solid #E52A30;
+	color: #E52A30;
+	background-color: white;
+	transform: scale(1.1);
 }
 
 		</style>
@@ -44,11 +48,11 @@
 		<div id="katalog">
 		</div>
 		<!--Upisi ovde broj stranica u data-stranice-->
-		<div id="mydata" data-stranice="27"></div>
+		<div id="mydata" data-stranice="9"></div>
 		<div class="button-container">
 			<div class="button-center">
-			<a href="https://www.eestecns.org/" target="_blank">
-				<button class="button">KUPI!</button>
+			<a href="https://forms.gle/AVMb6ztLazcYDtM88" target="_blank">
+				<button class="myButton">KUPI!</button>
 			</a>
 			</div>
 		</div>
